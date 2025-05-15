@@ -39,4 +39,9 @@ public class ProductController {
     public ResponseEntity<Product>modifyProduct(@PathVariable Long id, @RequestBody Product product){
         return productService.modifyProduct(id, product);
     }
+
+    @DeleteMapping("/api/products/{id}")
+    public ResponseEntity<Product> deleteProduct(@PathVariable Long id){
+        return productService.deleteProduct(id);
+    }
 }

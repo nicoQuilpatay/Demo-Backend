@@ -37,6 +37,18 @@ public class ProductService {
         return new ResponseEntity<>(product, HttpStatus.OK);
     }
 
+
+    public ResponseEntity<Product> deleteProduct(Long id){
+        Product productDelete = productRepository.findById(id).orElse(null);
+        if (productDelete == null){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }else{
+            productRepository.deleteById(id);
+            return new ResponseEntity<>(HttpStatus.OK);
+        }
+    }
+
+
     public ResponseEntity<Product> modifyProduct(Long id, Product product){
         Product modifiedProduct = productRepository.findById(id).orElse(null);
 
