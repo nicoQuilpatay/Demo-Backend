@@ -1,6 +1,7 @@
 package com.ucc.Demo.Backend.webRest;
 
-import com.ucc.Demo.Backend.Model.Product;
+import com.ucc.Demo.Backend.Model.dto.ProductInfoDTO;
+import com.ucc.Demo.Backend.Model.entities.Product;
 import com.ucc.Demo.Backend.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -38,6 +39,12 @@ public class ProductController {
     @PatchMapping("/api/products/{id}")
     public ResponseEntity<Product>modifyProduct(@PathVariable Long id, @RequestBody Product product){
         return productService.modifyProduct(id, product);
+    }
+
+    @GetMapping("api/product/info")
+    @ResponseStatus(HttpStatus.OK)
+    public  List<ProductInfoDTO>getProductDTO(){
+        return productService.getAllInfoProducts();
     }
 
     @DeleteMapping("/api/products/{id}")

@@ -1,13 +1,15 @@
 package com.ucc.Demo.Backend.service;
 
-import com.ucc.Demo.Backend.Model.Product;
+import com.ucc.Demo.Backend.Model.dto.ProductInfoDTO;
+import com.ucc.Demo.Backend.Model.entities.Product;
 import com.ucc.Demo.Backend.repository.ProductRepository;
-import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
+
 @Service
 public class ProductService {
 
@@ -65,4 +67,12 @@ public class ProductService {
             return new ResponseEntity<>(modifiedProduct, HttpStatus.OK);
         }
     };
+
+    public List<ProductInfoDTO> getAllInfoProducts() {
+        return productRepository.findAll()
+                .stream()
+                .map(productEntity -> new ProductInfoDTO(productEntity.getId(), productEntity.getName()))
+                .collect(Collectors.toList());
+
+    }
 }

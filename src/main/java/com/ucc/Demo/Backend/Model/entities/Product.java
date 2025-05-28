@@ -1,4 +1,4 @@
-package com.ucc.Demo.Backend.Model;
+package com.ucc.Demo.Backend.Model.entities;
 import jakarta.persistence.*;
 
 @Entity
