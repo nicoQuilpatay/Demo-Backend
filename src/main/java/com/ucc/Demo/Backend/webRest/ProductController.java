@@ -41,14 +41,23 @@ public class ProductController {
         return productService.modifyProduct(id, product);
     }
 
+
+    @DeleteMapping("/api/products/{id}")
+    public ResponseEntity<Product> deleteProduct(@PathVariable Long id){
+        return productService.deleteProduct(id);
+    }
+
+
+    //uso de DTO
     @GetMapping("api/product/info")
     @ResponseStatus(HttpStatus.OK)
     public  List<ProductInfoDTO>getProductDTO(){
         return productService.getAllInfoProducts();
     }
 
-    @DeleteMapping("/api/products/{id}")
-    public ResponseEntity<Product> deleteProduct(@PathVariable Long id){
-        return productService.deleteProduct(id);
+    @PostMapping("api/product")
+    @ResponseStatus(HttpStatus.OK)
+    public ResponseEntity<Object>newProductFromDTO(@RequestBody ProductInfoDTO productInfoDTO){
+        return productService.newProductFromDTO(productInfoDTO);
     }
 }

@@ -2,6 +2,7 @@ package com.ucc.Demo.Backend.service;
 
 import com.ucc.Demo.Backend.Model.dto.ProductInfoDTO;
 import com.ucc.Demo.Backend.Model.entities.Product;
+import com.ucc.Demo.Backend.Model.mappers.ProductsMapper;
 import com.ucc.Demo.Backend.repository.ProductRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,11 +15,12 @@ import java.util.stream.Collectors;
 public class ProductService {
 
     private final ProductRepository productRepository;
+    private final ProductsMapper productsMapper;
 
-    //Este Public no lo tiene Axel
-
-    public ProductService(ProductRepository productRepository){
+    //Este Public no lo tiene Axel porque usa el @requiredArgConstructor
+    public ProductService(ProductRepository productRepository, ProductsMapper productsMapper){
         this.productRepository = productRepository;
+        this.productsMapper = productsMapper;
     }
 
     public List<Product> getProducts(){
@@ -68,11 +70,20 @@ public class ProductService {
         }
     };
 
+    // implementacion de DTO, este DTo devuelve el nombre del producto y su id
+
     public List<ProductInfoDTO> getAllInfoProducts() {
         return productRepository.findAll()
                 .stream()
-                .map(productEntity -> new ProductInfoDTO(productEntity.getId(), productEntity.getName()))
+                .map(productEntity -> new ProductInfoDTO(productEntity.getId(), productEntity.getName(), productEntity.getDescription()))
                 .collect(Collectors.toList());
 
+    }
+
+    //Crear Producto desde DTO
+    public ResponseEntity<Object> newProductFromDTO(ProductInfoDTO productInfoDTO){
+        Product productEntity = productsMapper.productsInfoDTOToProductsEntity(productInfoDTO);
+        productRepository.save(productEntity);
+        return new ResponseEntity<>(HttpStatus.CREATED);
     }
 }

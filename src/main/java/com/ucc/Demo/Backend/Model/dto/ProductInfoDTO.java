@@ -15,6 +15,7 @@ public class ProductInfoDTO implements Serializable {
 
     private Long id;
     private String name;
+    private String description;
 
 
 }
