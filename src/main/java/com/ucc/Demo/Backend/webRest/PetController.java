@@ -1,5 +1,6 @@
 package com.ucc.Demo.Backend.webRest;
 
+import com.ucc.Demo.Backend.Model.dto.PetDTO;
 import com.ucc.Demo.Backend.Model.entities.Pet;
 import com.ucc.Demo.Backend.service.PetService;
 import lombok.RequiredArgsConstructor;
@@ -28,5 +29,20 @@ public class PetController {
     public ResponseEntity<Pet> newPet(@RequestBody Pet pet){
         return petservice.newPet(pet);
     }
+
+    //Uso de DTO
+    @GetMapping("api/pet/info")
+    @ResponseStatus(HttpStatus.OK)
+    public  List<PetDTO>getPetDTO(){
+        return petservice.getAllInfoPets();
+    }
+
+    @PostMapping("api/pet/dto")
+    @ResponseStatus(HttpStatus.OK)
+    public ResponseEntity<Object>newPetFromDTO(@RequestBody PetDTO petDTO){
+        return petservice.newPetFromDTO(petDTO);
+    }
+
+
 }
 

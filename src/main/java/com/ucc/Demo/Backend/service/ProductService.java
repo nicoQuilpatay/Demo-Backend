@@ -71,7 +71,6 @@ public class ProductService {
     };
 
     // implementacion de DTO, este DTo devuelve el nombre del producto y su id
-
     public List<ProductInfoDTO> getAllInfoProducts() {
         return productRepository.findAll()
                 .stream()

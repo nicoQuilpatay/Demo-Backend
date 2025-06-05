@@ -1,20 +1,24 @@
 package com.ucc.Demo.Backend.Model.dto;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.Setter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.io.Serializable;
+
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 
-public class ProductInfoDTO implements Serializable {
+
+public class PetDTO {
 
     private Long id;
     private String name;
-    private String description;
+    private UserDTO userDTO;
 
 }
+

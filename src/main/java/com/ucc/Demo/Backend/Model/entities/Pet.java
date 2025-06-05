@@ -1,4 +1,5 @@
 package com.ucc.Demo.Backend.Model.entities;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 @Entity
@@ -15,21 +16,23 @@ public class Pet {
     private Boolean isLinked;
     private String description;
 
+
+
     //muchas pets tienen un user
     @ManyToOne()
+    @JsonBackReference
     @JoinColumn(name = "users")
     private User user;
 
     public Pet() {}
 
 
-    public Pet(Long id, String name, String humanId, Boolean isLinked, String description, String qrCode) {
+    public Pet(Long id, String name, String humanId, Boolean isLinked, String description ) {
         this.id = id;
         this.name = name;
         this.humanId = humanId;
         this.isLinked = isLinked;
         this.description = description;
-        this.qrCode = qrCode;
     }
 
 
@@ -73,15 +76,14 @@ public class Pet {
         this.description = description;
     }
 
-    public String getQrCode() {
-        return qrCode;
+    public User getUser() {
+        return user;
     }
 
-    public void setQrCode(String qrCode) {
-        this.qrCode = qrCode;
+    public void setUser(User user) {
+        this.user = user;
     }
 
-    private String qrCode;
 
 
 

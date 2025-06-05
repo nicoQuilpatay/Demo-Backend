@@ -5,7 +5,7 @@ import com.ucc.Demo.Backend.Model.entities.Product;
 import org.springframework.stereotype.Component;
 
 @Component
-public class ProductsMapper {
+public class ProductsMapper {   
 
     public Product productsInfoDTOToProductsEntity(ProductInfoDTO productDTO){
         Product productEntity = new Product();
