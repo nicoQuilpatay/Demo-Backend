@@ -15,6 +15,11 @@ public class Pet {
     private Boolean isLinked;
     private String description;
 
+    //muchas pets tienen un user
+    @ManyToOne()
+    @JoinColumn(name = "users")
+    private User user;
+
     public Pet() {}
 
 

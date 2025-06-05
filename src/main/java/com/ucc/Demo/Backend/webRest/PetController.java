@@ -1,7 +1,6 @@
 package com.ucc.Demo.Backend.webRest;
 
 import com.ucc.Demo.Backend.Model.entities.Pet;
-import com.ucc.Demo.Backend.Model.entities.Product;
 import com.ucc.Demo.Backend.service.PetService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
