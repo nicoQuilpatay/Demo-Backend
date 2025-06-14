@@ -38,12 +38,12 @@ public class UserService {
     public List<UserDTO> getAllInfoUsers() {
         return userRepository.findAll()
                 .stream()
-                .map(userEntity -> new UserDTO(userEntity.getId()))
+                .map(userEntity -> new UserDTO(userEntity.getId(),userEntity.getEmail(),userEntity.getName(),userEntity.getPassword()))
                 .collect(Collectors.toList());
 
     }
 
-    //Crear pet desde DTO
+    //Crear user desde DTO
     public ResponseEntity<Object> newUserFromDTO(UserDTO userDTO ){
         User userEntity = userMapper.userDTOToUserEntity(userDTO);
         userRepository.save(userEntity);

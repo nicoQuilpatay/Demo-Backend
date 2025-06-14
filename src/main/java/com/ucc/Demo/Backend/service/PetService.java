@@ -35,7 +35,7 @@ public class PetService {
     public List<PetDTO> getAllInfoPets() {
         return petRepository.findAll()
                 .stream()
-                .map(petEntity -> new PetDTO(petEntity.getId(), petEntity.getName()))
+                .map(petEntity -> new PetDTO(petEntity.getId(), petEntity.getName(), petEntity.getUser()))
                 .collect(Collectors.toList());
 
     }

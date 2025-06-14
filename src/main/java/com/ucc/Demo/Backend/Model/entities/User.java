@@ -16,8 +16,8 @@ public class User {
     private String password;
 
     //un usuario tiene muchas mascotas
-//    @OneToMany(mappedBy = "user")
-//    private List<Pet> pets;
+    @OneToMany(mappedBy = "user")
+    private List<Pet> pets;
 
     public User() {}
 

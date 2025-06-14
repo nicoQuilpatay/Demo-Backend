@@ -1,5 +1,6 @@
 package com.ucc.Demo.Backend.Model.dto;
 
+import com.ucc.Demo.Backend.Model.entities.User;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -20,5 +21,7 @@ public class PetDTO {
     private String name;
     private UserDTO userDTO;
 
+    public PetDTO(Long id, String name, User user) {
+    }
 }
 
