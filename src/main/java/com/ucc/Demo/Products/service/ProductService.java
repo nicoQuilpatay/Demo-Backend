@@ -1,5 +1,6 @@
 package com.ucc.Demo.Products.service;
 
+import com.ucc.Demo.Products.Model.dto.ProductDTO;
 import com.ucc.Demo.Products.Model.dto.ProductInfoDTO;
 import com.ucc.Demo.Products.Model.entities.Product;
 import com.ucc.Demo.Products.Model.mappers.ProductsMapper;
@@ -74,14 +75,14 @@ public class ProductService {
     public List<ProductInfoDTO> getAllInfoProducts() {
         return productRepository.findAll()
                 .stream()
-                .map(productEntity -> new ProductInfoDTO(productEntity.getId(), productEntity.getName(), productEntity.getDescription()))
+                .map(productEntity -> new ProductInfoDTO(productEntity.getId(), productEntity.getName(), productEntity.getDescription(),productEntity.getCategory()))
                 .collect(Collectors.toList());
 
     }
 
     //Crear Producto desde DTO
-    public ResponseEntity<Object> newProductFromDTO(ProductInfoDTO productInfoDTO){
-        Product productEntity = productsMapper.productsInfoDTOToProductsEntity(productInfoDTO);
+    public ResponseEntity<Object> newProductFromDTO(ProductDTO productDTO){
+        Product productEntity = productsMapper.productsDTOToProductsEntity(productDTO);
         productRepository.save(productEntity);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }

@@ -1,5 +1,6 @@
 package com.ucc.Demo.Products.webRest;
 
+import com.ucc.Demo.Products.Model.dto.ProductDTO;
 import com.ucc.Demo.Products.Model.dto.ProductInfoDTO;
 import com.ucc.Demo.Products.Model.entities.Product;
 import com.ucc.Demo.Products.service.ProductService;
@@ -55,7 +56,7 @@ public class ProductController {
 
     @PostMapping("api/product")
     @ResponseStatus(HttpStatus.OK)
-    public ResponseEntity<Object>newProductFromDTO(@RequestBody ProductInfoDTO productInfoDTO){
-        return productService.newProductFromDTO(productInfoDTO);
+    public ResponseEntity<Object>newProductFromDTO(@RequestBody ProductDTO productDTO){
+        return productService.newProductFromDTO(productDTO);
     }
 }

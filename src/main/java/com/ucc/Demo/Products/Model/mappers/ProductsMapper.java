@@ -1,25 +1,31 @@
 package com.ucc.Demo.Products.Model.mappers;
 
+import com.ucc.Demo.Products.Model.dto.ProductDTO;
 import com.ucc.Demo.Products.Model.dto.ProductInfoDTO;
+import com.ucc.Demo.Products.Model.entities.Category;
 import com.ucc.Demo.Products.Model.entities.Product;
+import com.ucc.Demo.Products.repository.CategoryRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
 @Component
+@RequiredArgsConstructor
 public class ProductsMapper {
 
-    public Product productsInfoDTOToProductsEntity(ProductInfoDTO productDTO){
+    private final CategoryRepository categoryRepository;
+
+    public Product productsDTOToProductsEntity(ProductDTO productDTO){
         Product productEntity = new Product();
-        productEntity.setName(productDTO.getName());
-        productEntity.setId(productDTO.getId());
         productEntity.setDescription("creado por mapper");
+
+        Category categoryEntity = categoryRepository.findOneById(productDTO.getCategoryDTO().getId());
+        productEntity.setCategory(categoryEntity);
         return productEntity;
     }
 
-    public ProductInfoDTO ProductsEntityToProductInfoDTO(Product productEntity){
-        ProductInfoDTO productInfoDTO = new ProductInfoDTO();
-        productInfoDTO.setId(productEntity.getId());
-        productInfoDTO.setName(productEntity.getName());
-        productInfoDTO.setDescription("creado por mapper");
-        return  productInfoDTO;
+    public ProductDTO ProductsEntityToProductInfoDTO(Product productEntity){
+        ProductDTO productDTO = new ProductDTO();
+        productDTO.setName(productEntity.getName());
+        return  productDTO;
     }
 }
