@@ -1,4 +1,4 @@
-package com.ucc.Demo.Products.Model.dto;
+package com.ucc.Demo.Product.Model.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

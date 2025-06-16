@@ -1,9 +1,9 @@
-package com.ucc.Demo.Products.webRest;
+package com.ucc.Demo.Product.webRest;
 
-import com.ucc.Demo.Products.Model.dto.ProductDTO;
-import com.ucc.Demo.Products.Model.dto.ProductInfoDTO;
-import com.ucc.Demo.Products.Model.entities.Product;
-import com.ucc.Demo.Products.service.ProductService;
+import com.ucc.Demo.Product.Model.dto.ProductDTO;
+import com.ucc.Demo.Product.Model.dto.ProductInfoDTO;
+import com.ucc.Demo.Product.Model.entities.Product;
+import com.ucc.Demo.Product.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -1,10 +1,10 @@
-package com.ucc.Demo.Products.service;
+package com.ucc.Demo.Product.service;
 
-import com.ucc.Demo.Products.Model.dto.ProductDTO;
-import com.ucc.Demo.Products.Model.dto.ProductInfoDTO;
-import com.ucc.Demo.Products.Model.entities.Product;
-import com.ucc.Demo.Products.Model.mappers.ProductsMapper;
-import com.ucc.Demo.Products.repository.ProductRepository;
+import com.ucc.Demo.Product.Model.dto.ProductDTO;
+import com.ucc.Demo.Product.Model.dto.ProductInfoDTO;
+import com.ucc.Demo.Product.Model.entities.Product;
+import com.ucc.Demo.Product.Model.mappers.ProductsMapper;
+import com.ucc.Demo.Product.repository.ProductRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -75,7 +75,7 @@ public class ProductService {
     public List<ProductInfoDTO> getAllInfoProducts() {
         return productRepository.findAll()
                 .stream()
-                .map(productEntity -> new ProductInfoDTO(productEntity.getId(), productEntity.getName(), productEntity.getDescription(),productEntity.getCategory()))
+                .map(productEntity -> new ProductInfoDTO(productEntity.getId(), productEntity.getName(), productEntity.getDescription(),productEntity.getCategory(),productEntity.getStock()))
                 .collect(Collectors.toList());
 
     }

@@ -1,8 +1,8 @@
-package com.ucc.Demo.Products.webRest;
+package com.ucc.Demo.Product.webRest;
 
 
-import com.ucc.Demo.Products.Model.entities.Category;
-import com.ucc.Demo.Products.service.CategoryService;
+import com.ucc.Demo.Product.Model.entities.Category;
+import com.ucc.Demo.Product.service.CategoryService;
 import lombok.RequiredArgsConstructor;
 
 import org.springframework.http.HttpStatus;

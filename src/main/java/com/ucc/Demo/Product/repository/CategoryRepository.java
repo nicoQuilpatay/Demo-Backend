@@ -1,6 +1,6 @@
-package com.ucc.Demo.Products.repository;
+package com.ucc.Demo.Product.repository;
 
-import com.ucc.Demo.Products.Model.entities.Category;
+import com.ucc.Demo.Product.Model.entities.Category;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

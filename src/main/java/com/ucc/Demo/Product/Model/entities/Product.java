@@ -1,4 +1,4 @@
-package com.ucc.Demo.Products.Model.entities;
+package com.ucc.Demo.Product.Model.entities;
 import jakarta.persistence.*;
 import lombok.*;
 

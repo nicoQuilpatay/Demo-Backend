@@ -1,5 +1,5 @@
-package com.ucc.Demo.Products.Model.dto;
-import com.ucc.Demo.Products.Model.entities.Category;
+package com.ucc.Demo.Product.Model.dto;
+import com.ucc.Demo.Product.Model.entities.Category;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -18,6 +18,7 @@ public class ProductInfoDTO implements Serializable {
     private String name;
     private String description;
     private Category category;
+    private Integer stock;
 
 
 }

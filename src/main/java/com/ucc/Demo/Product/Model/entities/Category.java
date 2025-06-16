@@ -1,4 +1,4 @@
-package com.ucc.Demo.Products.Model.entities;
+package com.ucc.Demo.Product.Model.entities;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;

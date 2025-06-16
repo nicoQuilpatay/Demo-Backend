@@ -1,4 +1,4 @@
-package com.ucc.Demo.Products.Model.dto;
+package com.ucc.Demo.Product.Model.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -15,5 +15,6 @@ import java.io.Serializable;
 public class ProductDTO implements Serializable {
     private String name;
     private Double price;
+    private Integer stock;
     private CategoryDTO categoryDTO;
 }

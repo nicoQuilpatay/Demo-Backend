@@ -1,4 +1,4 @@
-package com.ucc.Demo.Products;
+package com.ucc.Demo.Product;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

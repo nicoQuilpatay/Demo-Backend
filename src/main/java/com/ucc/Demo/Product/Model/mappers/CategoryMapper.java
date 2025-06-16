@@ -1,9 +1,7 @@
-package com.ucc.Demo.Products.Model.mappers;
+package com.ucc.Demo.Product.Model.mappers;
 
-import com.ucc.Demo.Products.Model.dto.CategoryDTO;
-import com.ucc.Demo.Products.Model.dto.ProductInfoDTO;
-import com.ucc.Demo.Products.Model.entities.Category;
-import com.ucc.Demo.Products.Model.entities.Product;
+import com.ucc.Demo.Product.Model.dto.CategoryDTO;
+import com.ucc.Demo.Product.Model.entities.Category;
 import org.springframework.stereotype.Component;
 
 @Component

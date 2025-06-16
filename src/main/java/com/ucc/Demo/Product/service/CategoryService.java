@@ -1,21 +1,13 @@
-package com.ucc.Demo.Products.service;
+package com.ucc.Demo.Product.service;
 
-import com.ucc.Demo.Products.Model.dto.CategoryDTO;
-import com.ucc.Demo.Products.Model.dto.ProductInfoDTO;
-import com.ucc.Demo.Products.Model.entities.Category;
-import com.ucc.Demo.Products.Model.entities.Product;
-import com.ucc.Demo.Products.Model.mappers.CategoryMapper;
-import com.ucc.Demo.Products.Model.mappers.ProductsMapper;
-import com.ucc.Demo.Products.repository.CategoryRepository;
-import com.ucc.Demo.Products.repository.ProductRepository;
+import com.ucc.Demo.Product.Model.entities.Category;
+import com.ucc.Demo.Product.repository.CategoryRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor

@@ -1,4 +1,4 @@
-package com.ucc.Demo.Products;
+package com.ucc.Demo.Product;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

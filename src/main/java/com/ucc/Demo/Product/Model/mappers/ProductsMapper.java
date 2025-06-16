@@ -1,10 +1,9 @@
-package com.ucc.Demo.Products.Model.mappers;
+package com.ucc.Demo.Product.Model.mappers;
 
-import com.ucc.Demo.Products.Model.dto.ProductDTO;
-import com.ucc.Demo.Products.Model.dto.ProductInfoDTO;
-import com.ucc.Demo.Products.Model.entities.Category;
-import com.ucc.Demo.Products.Model.entities.Product;
-import com.ucc.Demo.Products.repository.CategoryRepository;
+import com.ucc.Demo.Product.Model.dto.ProductDTO;
+import com.ucc.Demo.Product.Model.entities.Category;
+import com.ucc.Demo.Product.Model.entities.Product;
+import com.ucc.Demo.Product.repository.CategoryRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
@@ -16,6 +15,8 @@ public class ProductsMapper {
 
     public Product productsDTOToProductsEntity(ProductDTO productDTO){
         Product productEntity = new Product();
+        productEntity.setName(productDTO.getName());
+        productEntity.setStock(productDTO.getStock());
         productEntity.setDescription("creado por mapper");
 
         Category categoryEntity = categoryRepository.findOneById(productDTO.getCategoryDTO().getId());
