@@ -1,9 +1,9 @@
-package com.ucc.Demo.Backend.service;
+package com.ucc.Demo.Products.service;
 
-import com.ucc.Demo.Backend.Model.dto.ProductInfoDTO;
-import com.ucc.Demo.Backend.Model.entities.Product;
-import com.ucc.Demo.Backend.Model.mappers.ProductsMapper;
-import com.ucc.Demo.Backend.repository.ProductRepository;
+import com.ucc.Demo.Products.Model.dto.ProductInfoDTO;
+import com.ucc.Demo.Products.Model.entities.Product;
+import com.ucc.Demo.Products.Model.mappers.ProductsMapper;
+import com.ucc.Demo.Products.repository.ProductRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -17,7 +17,6 @@ public class ProductService {
     private final ProductRepository productRepository;
     private final ProductsMapper productsMapper;
 
-    //Este Public no lo tiene Axel porque usa el @requiredArgConstructor
     public ProductService(ProductRepository productRepository, ProductsMapper productsMapper){
         this.productRepository = productRepository;
         this.productsMapper = productsMapper;

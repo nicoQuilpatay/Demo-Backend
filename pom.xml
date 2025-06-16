@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.ucc</groupId>
-	<artifactId>Demo-Backend</artifactId>
+	<artifactId>Products</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Demo-Backend</name>
 	<description>Proyecto backend</description>

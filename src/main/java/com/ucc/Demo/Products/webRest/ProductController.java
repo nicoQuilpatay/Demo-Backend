@@ -1,8 +1,8 @@
-package com.ucc.Demo.Backend.webRest;
+package com.ucc.Demo.Products.webRest;
 
-import com.ucc.Demo.Backend.Model.dto.ProductInfoDTO;
-import com.ucc.Demo.Backend.Model.entities.Product;
-import com.ucc.Demo.Backend.service.ProductService;
+import com.ucc.Demo.Products.Model.dto.ProductInfoDTO;
+import com.ucc.Demo.Products.Model.entities.Product;
+import com.ucc.Demo.Products.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -41,12 +41,10 @@ public class ProductController {
         return productService.modifyProduct(id, product);
     }
 
-
     @DeleteMapping("/api/products/{id}")
     public ResponseEntity<Product> deleteProduct(@PathVariable Long id){
         return productService.deleteProduct(id);
     }
-
 
     //uso de DTO
     @GetMapping("api/product/info")
